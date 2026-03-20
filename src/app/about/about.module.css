@@ -1,7 +1,23 @@
+.about {
+  padding-top: 140px;
+}
+
+.sub {
+  display: block;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+  color: var(--accent);
+  margin-bottom: var(--spacing-sm);
+  font-weight: 700;
+  text-align: center;
+}
+
 .about h1 {
-  font-size: 3rem;
+  font-size: clamp(2.5rem, 6vw, 4rem);
   margin-bottom: var(--spacing-lg);
   text-align: center;
+  color: var(--primary);
 }
 
 .content {
@@ -9,12 +25,14 @@
   grid-template-columns: 1fr 1fr;
   gap: var(--spacing-xl);
   align-items: center;
+  margin-top: var(--spacing-xl);
 }
 
 .text p {
   margin-bottom: var(--spacing-md);
   color: var(--text-secondary);
   font-size: 1.1rem;
+  line-height: 1.8;
 }
 
 .stats {
@@ -24,21 +42,45 @@
 }
 
 .statCard {
-  background: var(--card-bg);
-  padding: var(--spacing-md);
-  border-radius: var(--radius-md);
+  background: var(--white);
+  padding: var(--spacing-lg) var(--spacing-md);
+  border-radius: var(--radius-sm);
   text-align: center;
-  border: 1px solid rgba(144, 163, 176, 0.1);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition-fast);
+}
+
+.statCard:hover {
+  border-color: var(--accent);
+  box-shadow: var(--shadow-md);
 }
 
 .statCard h3 {
   color: var(--accent);
-  font-size: 2rem;
+  font-size: 2.5rem;
   margin-bottom: var(--spacing-xs);
 }
 
-@media (max-width: 768px) {
+.imageWrapper {
+  position: relative;
+  height: 500px;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+}
+
+.aboutImage {
+  object-fit: cover;
+}
+
+@media (max-width: 992px) {
   .content {
     grid-template-columns: 1fr;
+  }
+  
+  .imageWrapper {
+    height: 350px;
+    order: -1;
   }
 }

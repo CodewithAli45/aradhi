@@ -15,13 +15,17 @@ const outfit = Outfit({
 });
 
 export const metadata: Metadata = {
-  title: "Aradhi | Luxury Real Estate Developer",
-  description: "Modern real estate developer crafting premium residential and commercial spaces.",
+  title: "Aradhi Tower",
+  description: "Luxury residential tower by CPH Ltd. Bangladesh. Your dream is our deposit.",
   manifest: "/manifest.json",
+  icons: {
+    icon: "/aradhi_logo.png",
+    apple: "/aradhi_logo.png",
+  },
   appleWebApp: {
     capable: true,
     statusBarStyle: "default",
-    title: "Aradhi",
+    title: "Aradhi Tower",
   },
 };
 

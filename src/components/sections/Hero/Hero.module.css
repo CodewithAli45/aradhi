@@ -1,18 +1,20 @@
 .hero {
   position: relative;
-  height: 90vh;
+  height: 100vh;
   display: flex;
   align-items: center;
   overflow: hidden;
+  background-color: var(--background);
+  padding-top: 90px; /* Header height */
 }
 
 .imageWrapper {
   position: absolute;
   top: 0;
-  left: 0;
-  width: 100%;
+  right: 0;
+  width: 50%;
   height: 100%;
-  z-index: -1;
+  z-index: 1;
 }
 
 .image {
@@ -26,62 +28,124 @@
   width: 100%;
   height: 100%;
   background: linear-gradient(
-    to bottom,
-    rgba(10, 25, 47, 0.7) 0%,
-    rgba(10, 25, 47, 0.9) 100%
+    to right,
+    var(--background) 0%,
+    rgba(253, 252, 245, 0.4) 30%,
+    transparent 70%
   );
 }
 
 .content {
-  max-width: 800px;
+  z-index: 2;
+  width: 100%;
+}
+
+.lead {
+  max-width: 600px;
+}
+
+.badge {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background: var(--accent-tint);
+  color: var(--accent);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  border-radius: var(--radius-sm);
+  margin-bottom: var(--spacing-md);
+  border-left: 3px solid var(--accent);
 }
 
 .title {
-  font-size: clamp(2.5rem, 8vw, 4.5rem);
+  font-size: clamp(3rem, 10vw, 5.5rem);
   font-weight: 800;
-  margin-bottom: var(--spacing-md);
-  animation: fadeInUp 0.8s ease forwards;
+  margin-bottom: var(--spacing-sm);
+  color: var(--primary);
+  line-height: 0.9;
+  letter-spacing: -0.05em;
 }
 
-.title span {
+.accentText {
   color: var(--accent);
+  display: block;
 }
 
-.subtitle {
-  font-size: 1.2rem;
+.tagline {
+  font-size: 1.5rem;
+  font-weight: 400;
+  font-style: italic;
+  color: var(--accent);
+  margin-bottom: var(--spacing-md);
+  font-family: var(--font-heading);
+}
+
+.description {
+  font-size: 1.1rem;
   color: var(--text-secondary);
   margin-bottom: var(--spacing-lg);
-  max-width: 600px;
-  animation: fadeInUp 1s ease forwards;
+  line-height: 1.8;
 }
 
 .actions {
   display: flex;
   gap: var(--spacing-md);
-  animation: fadeInUp 1.2s ease forwards;
 }
 
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
+.btnOutline {
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+.btnOutline:hover {
+  background: var(--primary);
+  color: var(--white);
+}
+
+@media (max-width: 1024px) {
+  .imageWrapper {
+    width: 40%;
   }
 }
 
 @media (max-width: 768px) {
   .hero {
-    height: 80vh;
+    flex-direction: column;
     text-align: center;
+    padding-top: 120px;
+    height: auto;
+    padding-bottom: var(--spacing-xl);
   }
-  .content {
+  
+  .imageWrapper {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    margin-bottom: var(--spacing-xl);
+  }
+  
+  .image {
+    clip-path: none;
+  }
+  
+  .overlay {
+    background: linear-gradient(
+      to bottom,
+      var(--background) 0%,
+      transparent 20%,
+      transparent 80%,
+      var(--background) 100%
+    );
+  }
+  
+  .lead {
+    max-width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
   }
+  
   .actions {
     flex-direction: column;
     width: 100%;

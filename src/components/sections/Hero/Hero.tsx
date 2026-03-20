@@ -6,8 +6,8 @@ const Hero = () => {
     <section className={styles.hero}>
       <div className={styles.imageWrapper}>
         <Image 
-          src="/luxury_real_estate_hero.png" 
-          alt="Luxury Real Estate" 
+          src="/aradhi_tower_render.png" 
+          alt="Aradhi Tower" 
           fill 
           priority
           className={styles.image}
@@ -15,15 +15,22 @@ const Hero = () => {
         <div className={styles.overlay}></div>
       </div>
       <div className={`${styles.content} container`}>
-        <h1 className={styles.title}>
-          Crafting <span className="accent">Future</span> Spaces
-        </h1>
-        <p className={styles.subtitle}>
-          Aradhi Developers brings you premium residential and commercial projects that redefine luxury living.
-        </p>
-        <div className={styles.actions}>
-          <button className="btn btn-primary">View Projects</button>
-          <button className="btn">Our Story</button>
+        <div className={styles.lead}>
+          <span className={styles.badge}>Premium Living in Bangladesh</span>
+          <h1 className={styles.title}>
+            ARADHI <span className={styles.accentText}>TOWER</span>
+          </h1>
+          <p className={styles.tagline}>
+            "Your dream is our deposit."
+          </p>
+          <p className={styles.description}>
+            Experience architectural excellence and luxury redefined by <strong>CPH Ltd. Bangladesh</strong>. 
+            We build more than just towers; we build legacies.
+          </p>
+          <div className={styles.actions}>
+            <button className="btn btn-primary">Discover Projects</button>
+            <button className={`${styles.btnOutline} btn`}>Our Legacy</button>
+          </div>
         </div>
       </div>
     </section>

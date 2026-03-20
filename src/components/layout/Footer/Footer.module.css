@@ -1,7 +1,8 @@
 .footer {
-  background: var(--primary-light);
+  background: var(--background-alt);
   padding-top: var(--spacing-xl);
-  border-top: 1px solid rgba(144, 163, 176, 0.1);
+  border-top: 1px solid var(--border-color);
+  color: var(--text-primary);
 }
 
 .content {
@@ -11,21 +12,41 @@
   padding-bottom: var(--spacing-lg);
 }
 
-.brand p {
-  max-width: 300px;
-  margin-top: var(--spacing-sm);
-  color: var(--text-secondary);
+.brand .logo {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  margin-bottom: var(--spacing-md);
 }
 
-.logo {
+.logoImg {
+  object-fit: contain;
+}
+
+.brand h2 {
+  font-size: 1.5rem;
+  letter-spacing: 0.1em;
+  color: var(--primary);
+}
+
+.tagline {
+  font-style: italic;
+  font-size: 1.1rem;
   color: var(--accent);
   margin-bottom: var(--spacing-sm);
 }
 
+.company {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
 .links h3, .contact h3 {
   margin-bottom: var(--spacing-md);
-  color: var(--white);
-  font-size: 1.2rem;
+  color: var(--primary);
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
 }
 
 .links ul li {
@@ -34,6 +55,7 @@
 
 .links a {
   color: var(--text-secondary);
+  font-size: 0.95rem;
 }
 
 .links a:hover {
@@ -44,13 +66,14 @@
 .contact p {
   color: var(--text-secondary);
   margin-bottom: var(--spacing-sm);
+  font-size: 0.95rem;
 }
 
 .bottom {
   text-align: center;
   padding: var(--spacing-md) 0;
-  border-top: 1px solid rgba(144, 163, 176, 0.05);
-  font-size: 0.9rem;
+  border-top: 1px solid var(--border-color);
+  font-size: 0.85rem;
   color: var(--text-secondary);
 }
 
@@ -59,7 +82,7 @@
     grid-template-columns: 1fr;
     text-align: center;
   }
-  .brand p {
-    margin: var(--spacing-sm) auto;
+  .brand .logo {
+    justify-content: center;
   }
 }

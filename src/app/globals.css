@@ -13,8 +13,13 @@ body {
   background-color: var(--background);
   color: var(--text-primary);
   font-family: var(--font-main);
-  line-height: 1.6;
+  line-height: 1.7;
   scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+}
+
+a, button, [role="button"] {
+  cursor: pointer;
 }
 
 a {
@@ -29,8 +34,10 @@ ul {
 
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-heading);
-  color: var(--white);
-  line-height: 1.1;
+  color: var(--primary);
+  line-height: 1.2;
+  font-weight: 600;
+  letter-spacing: -0.02em;
 }
 
 main {
@@ -38,7 +45,7 @@ main {
 }
 
 .container {
-  max-width: 1200px;
+  max-width: 1280px;
   margin: 0 auto;
   padding: 0 var(--spacing-md);
 }
@@ -48,10 +55,15 @@ main {
 }
 
 .btn {
-  display: inline-block;
-  padding: 0.75rem 1.5rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 2rem;
   border-radius: var(--radius-sm);
-  font-weight: 500;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
   cursor: pointer;
   transition: var(--transition-fast);
   border: 1px solid var(--accent);
@@ -60,15 +72,20 @@ main {
 }
 
 .btn:hover {
-  background: var(--accent-tint);
+  background: var(--accent);
+  color: var(--white);
 }
 
 .btn-primary {
   background: var(--accent);
-  color: var(--primary);
+  color: var(--white);
 }
 
 .btn-primary:hover {
-  background: rgba(100, 255, 218, 0.8);
-  border-color: rgba(100, 255, 218, 0.8);
+  background: var(--accent-hover);
+  border-color: var(--accent-hover);
+}
+
+input, textarea {
+  font-family: var(--font-main);
 }
